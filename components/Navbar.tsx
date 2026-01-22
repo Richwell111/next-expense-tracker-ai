@@ -2,7 +2,7 @@
 
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-// import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -24,15 +24,15 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center gap-2 sm:gap-3 flex-shrink-0 group transition-all duration-300 hover:scale-105"
+              className="flex items-center gap-2 sm:gap-3 shrink-0 group transition-all duration-300 hover:scale-105"
               onClick={closeMobileMenu}
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-3">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-linear-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-3">
                 <span className="text-white text-xs sm:text-sm md:text-lg font-bold">
                   💰
                 </span>
               </div>
-              <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold bg-linear-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
                 <span className="hidden sm:inline">ExpenseTracker AI</span>
                 <span className="sm:hidden">ExpenseTracker</span>
               </span>
@@ -46,7 +46,7 @@ export default function Navbar() {
               className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
             >
               <span className="relative z-10">Home</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
             </Link>
 
             <Link
@@ -54,7 +54,7 @@ export default function Navbar() {
               className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
             >
               <span className="relative z-10">About</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
             </Link>
 
             <Link
@@ -62,7 +62,7 @@ export default function Navbar() {
               className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
             >
               <span className="relative z-10">Contact</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
             </Link>
           </div>
 
@@ -70,8 +70,8 @@ export default function Navbar() {
           <div className="flex items-center space-x-1 sm:space-x-2">
             {/* Theme Toggle */}
             <div className="p-0.5 sm:p-1">
-              {/* <ThemeToggle /> */}
-              <h1>Th</h1>
+              <ThemeToggle />
+             
             </div>
 
             {/* Authentication - Desktop */}
@@ -211,7 +211,7 @@ export default function Navbar() {
               </SignedOut>
 
               <SignedIn>
-                <div className="flex items-center justify-center p-3 rounded-xl bg-gradient-to-r from-emerald-100/50 to-green-100/50 dark:from-emerald-900/20 dark:to-green-900/20 backdrop-blur-sm border border-emerald-200/30 dark:border-emerald-700/30">
+                <div className="flex items-center justify-center p-3 rounded-xl bg-linear-to-r from-emerald-100/50 to-green-100/50 dark:from-emerald-900/20 dark:to-green-900/20 backdrop-blur-sm border border-emerald-200/30 dark:border-emerald-700/30">
                   <UserButton
                     appearance={{
                       elements: {
