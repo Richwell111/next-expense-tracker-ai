@@ -1,18 +1,16 @@
-import { PrismaClient } from "@/app/generated/prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
-
-
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL,
-});
-
+import { PrismaClient } from "@prisma/client";
 
 declare global {
+  // eslint-disable-next-line no-var
   var prisma: PrismaClient | undefined;
 }
 
-export const db = globalThis.prisma || new PrismaClient({adapter});
+export const db =
+  global.prisma ||
+  new PrismaClient({
+    log: ["error"],
+  });
 
-if (process.env.NODE_ENV !== 'production') {
-  globalThis.prisma = db;
+if (process.env.NODE_ENV !== "production") {
+  global.prisma = db;
 }
