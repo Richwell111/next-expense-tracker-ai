@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ExpenseTracker AI 💸🤖
 
-## Getting Started
+An AI-powered expense tracking web application that helps users understand and improve their spending habits through intelligent categorization, real-time analytics, and personalized financial insights.
 
-First, run the development server:
+🔗 **Live Demo:** https://next-expense-tracker-ai-dusky.vercel.app  
+🔗 **GitHub Repo:** https://github.com/Richwell111/next-expense-tracker-ai
 
-```bash
+---
+
+## 🚀 Features
+
+- 🔐 Secure authentication with **Clerk** (Google, GitHub, Email)
+- 🧠 **AI-powered expense categorization** using natural language
+- 📊 **Real-time analytics & charts** with Chart.js
+- ✨ **Personalized AI insights** with confidence scores and smart tips
+- 🌗 **Light & Dark mode** support
+- ⚡ Smooth UI interactions and real-time updates
+- 📱 Fully responsive design
+- ☁️ **Serverless deployment on Vercel**
+- 🛟 Graceful fallbacks when AI services are unavailable
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **Next.js 16 (App Router)**
+- **React 19**
+- **Tailwind CSS**
+- **Chart.js**
+
+### Backend & Database
+- **Prisma ORM**
+- **PostgreSQL (Neon)**
+- **Server Actions**
+
+### Authentication
+- **Clerk**
+
+### AI
+- **OpenRouter API**
+  - Expense categorization
+  - Financial insights generation
+
+### Deployment
+- **Vercel**
+
+---
+
+## 🧠 AI Capabilities
+
+- Categorizes expenses automatically based on descriptions
+- Analyzes spending patterns
+- Generates actionable financial insights
+- Assigns confidence scores to AI suggestions
+- Provides helpful fallback responses if AI is unavailable
+
+---
+
+## 📦 Environment Variables
+
+Create a `.env` file with the following:
+
+```env
+DATABASE_URL=your_neon_database_url
+OPENROUTER_API_KEY=your_openrouter_api_key
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+CLERK_SECRET_KEY=your_clerk_secret
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Clone the repository
+git clone https://github.com/Richwell111/next-expense-tracker-ai.git
+
+# Install dependencies
+npm install
+
+# Generate Prisma Client
+npx prisma generate
+
+# Run database migrations
+npx prisma migrate dev
+
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project Structure
+app/
+ ├─ actions/        # Server actions
+ ├─ api/            # API routes
+ ├─ components/     # Reusable UI components
+ ├─ contexts/       # Theme & global contexts
+ ├─ lib/            # Prisma, AI utilities
+ └─ page.tsx        # Main dashboard
+prisma/
+ └─ schema.prisma
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
