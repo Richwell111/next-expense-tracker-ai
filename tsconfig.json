@@ -18,8 +18,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".", // Add this to make paths work correctly
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      // This is the magic line that fixes the "Module Not Found"
+      "@/generated/*": ["./lib/generated/prisma/*"]
     }
   },
   "include": [
@@ -28,7 +31,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "lib/generated/prisma/client" // Force include the generated client
   ],
   "exclude": ["node_modules"]
 }
