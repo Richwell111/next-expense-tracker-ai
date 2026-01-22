@@ -19,12 +19,20 @@ export const checkUser = async () => {
     return loggedInUser;
   }
 
-  const newUser = await db.user.create({
-    data: {
+  // Use upsert instead of create to avoid duplicate email constraint errors
+  const newUser = await db.user.upsert({
+    where: {
       clerkUserId: user.id,
-      name: `${user.firstName} ${user.lastName}`,
-      imageUrl: user.imageUrl,
-      email: user.emailAddresses[0]?.emailAddress,
+    },
+    update: {
+      name: `${user.firstName || ""} ${user.lastName || ""}`.trim(),
+      imageUrl: user.imageUrl || null,
+    },
+    create: {
+      clerkUserId: user.id,
+      name: `${user.firstName || ""} ${user.lastName || ""}`.trim(),
+      imageUrl: user.imageUrl || null,
+      email: user.emailAddresses[0]?.emailAddress || `clerk_${user.id}@temp.local`,
     },
   });
 
